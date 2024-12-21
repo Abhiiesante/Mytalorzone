@@ -10,7 +10,7 @@ const Hero = () => {
                         <p className='w-8 md:w-11 h-[1px] bg-[#414141]'></p>
                         <p className=' font-medium text-sm md:text-base'>OUR BESTSELLERS</p>
                     </div>
-                    <h1 className='text-3xl md:text-5xl font-bold leading-relaxed'>New Arrivals</h1>
+                    <h1 className='prata-regular text-3xl md:text-5xl font-bold leading-relaxed'>New Arrivals</h1>
                     <div className='flex items-center gap-2'>
                         <p className='text-sm md:text-base font-semibold text-[#414141]'>Shop Now</p>
                         <p className='w-8 md:w-11 h-[1px] bg-[#414141]'></p>
