@@ -4,8 +4,17 @@
 @tailwind utilities;
 
 .active {
-    background-color: #ffebf5;
+    border-color: #ffebf5;
     background-color: #6a6467;
+}
+
+select,
+input,
+textarea {
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    outline-color: #6a6467;
+    font-family: 'Outfit';
 }
 
 * {
