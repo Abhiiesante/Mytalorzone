@@ -6,39 +6,49 @@ import { ShopContext } from '../context/ShopContext'
 
 const Navbar = () => {
     const [visible, setVisible] = useState(false)
-    const { setShowSearch, getCartCount } = useContext(ShopContext);
+    const { setShowSearch, getCartCount, navigate, token, setToken, setCartItems } = useContext(ShopContext);
+    const logout = () => {
+        localStorage.removeItem('token');
+        setToken('');
+        setCartItems({});
+        navigate('/login');
+    }
+
     return (
         <div className='flex items-center justify-between p-4 font-bold font-sans text-lg'>
             <Link to='/'><img src={assets.logo} className='w-40' alt="" /></Link>
             <ul className='hidden sm:flex gap-5 text-sm text-gray-600'>
                 <NavLink to='/' className='flex flex-col items-center gap-1'>
-                    <p>HOME</p>
+                    <p className='text-lg'>HOME</p>
                     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
                 </NavLink>
                 <NavLink to='/collection' className='flex flex-col items-center gap-1'>
-                    <p>COLLECTION</p>
+                    <p className='text-lg'>COLLECTION</p>
                     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
                 </NavLink>
                 <NavLink to='/about' className='flex flex-col items-center gap-1'>
-                    <p>ABOUT</p>
+                    <p className='text-lg'>ABOUT</p>
                     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
                 </NavLink>
                 <NavLink to='/contact' className='flex flex-col items-center gap-1'>
-                    <p>CONTACT</p>
+                    <p className='text-lg'>CONTACT</p>
                     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
                 </NavLink>
             </ul>
             <div className='flex items-center gap-5'>
                 <img onClick={() => setShowSearch(true)} src={assets.search_icon} className='w-6 cursor-pointer' alt="" />
                 <div className='group relative'>
-                    <Link to='/login'><img className='w-6 cursor-pointer' src={assets.profile_icon} alt="" /></Link>
-                    <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
-                        <div className='flex flex-col gap-2 w-36 px-4 py-3 bg-slate-100 text-gray-600 rounded-md shadow-md'>
-                            <p className='cursor-pointer hover:text-black'>My Profile</p>
-                            <p className='cursor-pointer hover:text-black'>Orders</p>
-                            <p className='cursor-pointer hover:text-black'>Logout</p>
+                    <img onClick={() => token ? null : navigate('/login')} className='w-6 cursor-pointer' src={assets.profile_icon} alt="" />
+                    {/* dropdown */}
+                    {token &&
+                        <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
+                            <div className='flex flex-col gap-2 w-36 px-4 py-3 bg-slate-100 text-gray-600 rounded-md shadow-md'>
+                                <p className='cursor-pointer hover:text-black'>My Profile</p>
+                                <p onClick={() => navigate('/orders')} className='cursor-pointer hover:text-black'>Orders</p>
+                                <p onClick={logout} className='cursor-pointer hover:text-black'>Logout</p>
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
                 <Link to='/cart' className='relative'>
                     <img src={assets.cart_icon} className='w-6 cursor-pointer min-w-5' alt="" />
@@ -59,7 +69,7 @@ const Navbar = () => {
                     <NavLink onClick={() => setVisible(false)} to='/contact' className='py-2 pl-6 border'>CONTACT</NavLink>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

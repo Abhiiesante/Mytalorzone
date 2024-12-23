@@ -13,7 +13,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <p className='text-xl font-medium mb-5'>COMPANY</p>
-                    <ul className='flex flex-col gap-1 text-gray-600'>
+                    <ul className='flex flex-col gap-1 text-gray-600 text-lg'>
                         <li>Home</li>
                         <li>About us</li>
                         <li>Privacy Policy</li>
@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
-                    <ul className='flex flex-col gap-1 text-gray-600'>
+                    <ul className='flex flex-col gap-1 text-gray-600 text-lg'>
                         <li>Address: Hyderabad, Telangana</li>
                         <li>Phone: +91-9652304065</li>
                         <li>Email: jellaabhiram929@gmail.com</li>
