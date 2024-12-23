@@ -114,7 +114,7 @@ const ShopContextProvider = (props) => {
 
     const getProductsData = async () => {
         try {
-            const response = await axios.get("https://mytalorzone-frontend-eight.vercel.app/api/product/list");
+            const response = await axios.get("https://mytalorzone-backend.vercel.app/api/product/list");
             if (response.data.success) {
                 setProducts(response.data.products);
             } else {
