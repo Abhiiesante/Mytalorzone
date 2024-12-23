@@ -39,7 +39,7 @@ const ShopContextProvider = (props) => {
         setCartItems(cartData);
         if (token) {
             try {
-                const response = await axios.post("https://mytalorzone-frontend-eight.vercel.app/api/cart/add", { itemId, size }, { headers: { token } });
+                const response = await axios.post("https://mytalorzone-backend.vercel.app/api/cart/add", { itemId, size }, { headers: { token } });
 
 
             } catch (error) {
@@ -72,7 +72,7 @@ const ShopContextProvider = (props) => {
         setCartItems(cartData);
         if (token) {
             try {
-                const response = await axios.post("https://mytalorzone-frontend-eight.vercel.app/api/cart/update", { itemId, size, quantity }, { headers: { token } });
+                const response = await axios.post("https://mytalorzone-backend.vercel.app/api/cart/update", { itemId, size, quantity }, { headers: { token } });
             } catch (error) {
                 console.log(error);
                 toast.error(error.message);
@@ -82,7 +82,7 @@ const ShopContextProvider = (props) => {
 
     const getUserCart = async (token) => {
         try {
-            const response = await axios.post("https://mytalorzone-frontend-eight.vercel.app/api/cart/get", {}, { headers: { token } });
+            const response = await axios.post("https://mytalorzone-backend.vercel.app/api/cart/get", {}, { headers: { token } });
             if (response.data.success) {
                 setCartItems(response.data.cartData);
             } else {
