@@ -15,7 +15,7 @@ const Orders = () => {
             if (!token) {
                 return null;
             }
-            const response = await axios.post("http://127.0.0.1:4000/api/order/userorders", {}, { headers: { token } });
+            const response = await axios.post("https://mytalorzone-backend.vercel.app", {}, { headers: { token } });
             if (response.data.success) {
                 let allOrdersItem = [];
                 response.data.orders.map((order) => {

@@ -53,7 +53,7 @@ const PlaceOrder = () => {
             }
             switch (method) {
                 case 'cod':
-                    const response = await axios.post("http://127.0.0.1:4000/api/order/place", orderData, { headers: { token } });
+                    const response = await axios.post("https://mytalorzone-backend.vercel.app", orderData, { headers: { token } });
                     console.log(response.data);
                     if (response.data.success) {
                         setCartItems({});

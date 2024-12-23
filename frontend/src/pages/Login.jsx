@@ -15,7 +15,7 @@ const Login = () => {
         e.preventDefault();
         try {
             if (currentState === 'Sign Up') {
-                const response = await axios.post("http://127.0.0.1:4000/api/user/register", { name, email, password });
+                const response = await axios.post("https://mytalorzone-backend.vercel.app", { name, email, password });
                 console.log(response.data);
                 if (response.data.success) {
                     setToken(response.data.token);
@@ -25,7 +25,7 @@ const Login = () => {
                     toast.error(response.data.message);
                 }
             } else {
-                const response = await axios.post("http://127.0.0.1:4000/api/user/login", { email, password });
+                const response = await axios.post("https://mytalorzone-backend.vercel.app", { email, password });
                 if (response.data.success) {
                     setToken(response.data.token);
                     localStorage.setItem('token', response.data.token);
