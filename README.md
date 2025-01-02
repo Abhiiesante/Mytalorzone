@@ -42,7 +42,6 @@ To get started with MyTaroZone, follow these steps:
 ## Usage
 
 To run the project, use the following command:
-```bash
 npm start
 Public code references from 2 repositories
 [Provide additional instructions on how to use your project, including examples and screenshots if necessary.]
@@ -68,4 +67,4 @@ For any questions or suggestions, please feel free to reach out to us at [your e
 
 Thank you for using MyTaroZone!
 
-Replace placeholders such as `[briefly describe the purpose of the project]`, `[Description of feature 1]`, `[yourusername]`, `[your email address]`, etc., with the actual information relevant to your project.
+Replace placeholders such as `online shopping platform`, `Ecommerce`, `Abhiiesante`, `jellaabhiram929@gmail.com`, etc., with the actual information relevant to your project.
